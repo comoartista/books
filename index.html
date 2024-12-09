@@ -14,8 +14,132 @@
     <title>Books List</title>
   </head>
   <body>
-    <div class="container"></div>
-
+    <div class="container">
+      <header>
+        <h1>Books List</h1>
+      </header>
+      <form id="item-form">
+        <div class="form-control">
+          <label for="book-title">Book Title</label>
+          <input
+            type="text"
+            class="form-input"
+            id="book-title"
+            name="book-title"
+            placeholder="Enter Name Of Book"
+            required />
+        </div>
+        <div class="form-control">
+          <label for="book-author">Author</label>
+          <input
+            type="text"
+            class="form-input"
+            id="book-author"
+            name="book-author"
+            placeholder="Enter Author"
+            required />
+        </div>
+        <div class="form-control">
+          <label for="book-cover">Book Cover</label>
+          <input
+            type="file"
+            class="form-input"
+            id="book-cover"
+            name="book-cover"
+            accept="image/*" />
+        </div>
+        <div class="form-control">
+          <button type="submit" class="btn">
+            <i class="fa-solid fa-plus"></i> Add Book
+          </button>
+        </div>
+      </form>
+      <div class="filter">
+        <input
+          type="text"
+          class="form-input-filter"
+          id="filter"
+          placeholder="Filter Items" />
+      </div>
+      <ul id="item-list" class="items">
+        <li class="book-item">
+          <div class="img">
+            <img
+              src="./images/19288230.jpg"
+              alt="Book cover of 'Wild and Distant Seas'" />
+          </div>
+          <div class="book-details">
+            <h3 class="book-title">
+              Scrum: The Art of Doing Twice the Work in Half the Time
+            </h3>
+            <p class="book-author">Jeff Sutherland</p>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </li>
+        <li class="book-item">
+          <div class="img">
+            <img
+              src="./images/61157620.jpg"
+              alt="Book cover of 'Wild and Distant Seas'" />
+          </div>
+          <div class="book-details">
+            <h3 class="book-title">JavaScript: The Definitive Guide</h3>
+            <p class="book-author">David Flanagan</p>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </li>
+        <li class="book-item">
+          <div class="img">
+            <img
+              src="./images/25744928.jpg"
+              alt="Book cover of 'Wild and Distant Seas'" />
+          </div>
+          <div class="book-details">
+            <h3 class="book-title">
+              Deep Work: Rules for Focused Success in a Distracted World
+            </h3>
+            <p class="book-author">Cal Newport</p>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </li>
+        <li class="book-item">
+          <div class="img">
+            <img
+              src="./images/35133922.jpg"
+              alt="Book cover of 'Wild and Distant Seas'" />
+          </div>
+          <div class="book-details">
+            <h3 class="book-title">Educated</h3>
+            <p class="book-author">Tara Westover</p>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </li>
+        <li class="book-item">
+          <div class="img">
+            <img
+              src="./images/12067.jpg"
+              alt="Book cover of 'Wild and Distant Seas'" />
+          </div>
+          <div class="book-details">
+            <h3 class="book-title">Good Omens</h3>
+            <p class="book-author">Terry Pratchett , Neil Gaiman</p>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </li>
+        <li class="book-item">
+          <div class="img">
+            <img
+              src="./images/8910666.jpg"
+              alt="Book cover of 'Wild and Distant Seas'" />
+          </div>
+          <div class="book-details">
+            <h3 class="book-title">Eloquent JavaScript</h3>
+            <p class="book-author">Marijn Haverbeke</p>
+          </div>
+          <button class="remove-btn">Remove</button>
+        </li>
+      </ul>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>
