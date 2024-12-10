@@ -3,6 +3,7 @@ const inputTitle = form.querySelector("#book-title");
 const inputAuthor = form.querySelector("#book-author");
 const inputCover = form.querySelector("#book-cover");
 const itemList = document.querySelector("#item-list");
+const filterInput = document.querySelector("#filter");
 
 function createElement(tag, className, content = "") {
   const element = document.createElement(tag);
@@ -119,6 +120,28 @@ function removeItemFromStorage(titleToDelete) {
   );
   saveItemsToStorage(updateItems);
 }
+
+function filterItem(e) {
+  text = e.target.value.trim().toLowerCase();
+  let hasMatches = false;
+
+  itemList.querySelectorAll("li").forEach((item) => {
+    const itemName = item
+      .querySelector(".book-title")
+      .textContent.trim()
+      .toLowerCase();
+    if (itemName.includes(text)) {
+      item.style.display = "flex";
+      hasMatches = true;
+    } else {
+      item.style.display = "none";
+    }
+  });
+  if (!hasMatches) {
+    alert("No matches");
+  }
+}
 document.addEventListener("DOMContentLoaded", loadItems);
 form.addEventListener("submit", addItem);
 itemList.addEventListener("click", removeItem);
+filterInput.addEventListener("input", filterItem);

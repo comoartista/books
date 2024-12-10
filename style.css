@@ -22,6 +22,7 @@ img {
   height: 100%;
   object-fit: cover;
 }
+
 header {
   display: flex;
   justify-content: flex-start;
@@ -31,7 +32,6 @@ header {
 
 header h1 {
   font-weight: 600;
-  margin-left: 10px;
 }
 
 .container {
@@ -77,37 +77,22 @@ header h1 {
   background-color: #444;
 }
 
-.btn-link {
-  font-size: 16px;
+.remove-btn {
   background-color: transparent;
   color: #333;
   border: none;
-  padding: 0;
-  cursor: pointer;
-}
-
-.btn-clear {
-  margin-top: 20px;
-  width: 100%;
-  font-size: 16px;
-  background-color: transparent;
-  color: #333;
-  border: 1px solid #ccc;
   border-radius: 5px;
   padding: 10px 20px;
   cursor: pointer;
+  border: 1px solid #ccc;
 }
 
-.btn-clear:hover {
-  background-color: #f1f1f1;
-}
-
-.text-red {
-  color: red;
+.remove-btn:hover {
+  background-color: #333;
+  color: #fff;
 }
 
 /* Items */
-
 .items {
   margin-top: 20px;
   display: grid;
@@ -125,7 +110,6 @@ header h1 {
   margin-bottom: 6px;
   font-family: sans-serif;
   font-weight: normal;
-
 }
 
 .img {
@@ -134,16 +118,22 @@ header h1 {
   overflow: hidden;
   width: 200px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+}
 
-  img {
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
+@media (max-width: 900px) {
+  .items {
+    grid-template-columns: repeat(3, 1fr);
   }
 }
-@media (max-width: 500px) {
-  .items li {
-    width: 100%;
-    border-radius: 10px;
+
+@media (max-width: 720px) {
+  .items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 450px) {
+  .items {
+    grid-template-columns: repeat(1, 1fr);
   }
 }
