@@ -93,9 +93,32 @@ function addItem(e) {
     processNewItem();
   }
 }
+
 function loadItems() {
   const items = getItemsFromStorage();
   items.forEach(renderItem);
 }
+
+function removeItem(e) {
+  const titleToDelete =
+    e.target.previousElementSibling.firstElementChild.textContent
+      .trim()
+      .toLowerCase();
+  if (e.target.classList.contains("remove-btn")) {
+    e.target.parentElement.remove();
+  }
+
+  removeItemFromStorage(titleToDelete);
+}
+
+function removeItemFromStorage(titleToDelete) {
+  const items = getItemsFromStorage();
+
+  const updateItems = items.filter(
+    (item) => item.title.trim().toLowerCase() !== titleToDelete
+  );
+  saveItemsToStorage(updateItems);
+}
 document.addEventListener("DOMContentLoaded", loadItems);
 form.addEventListener("submit", addItem);
+itemList.addEventListener("click", removeItem);
